@@ -1,29 +1,38 @@
-//Define UI vars
-// const quoteWrite = document.querySelector(".quote-field")
-// const quoteDetail = document.querySelector("#text")
-// const clearQ = document.querySelector(".clear-quote");
-// const quoteList = document.querySelector(".saved-quote");
+// Define UI vars
 
-// //Load all event listeners
-// loadEventListeners();
+const quoteWrite = document.getElementById("#quote");
+const quoteDetail = document.getElementById("#text");
+const clearQ = document.getElementById("#clear-quotes");
+const quoteList = document.getElementById("#container");
 
-// function loadEventListeners() {
-//   quoteWrite.addEventListener("submit", addTask);
-// }
+quoteEventListeners();
 
-// function addTask(e) {
-//   if(quoteDetail.value === '') {
-//     alert('Empty');
-//   }
+function quoteEventListeners() {
+  quoteWrite.addEventListener('submit', addTask);
+};
 
 
 
-//   e.preventDefault();
-// }
 
 
-document.getElementsByClassName('quote-field').addEventListener('submit', function(e) {
+quoteWrite.addEventListener('submit', function(event) {
+  // if(quoteDetail.value === ''){
+  //   alert('Kindly enter your quotes')
+  // };
 
-  console.log('test');
-  e.preventDefault();
-})
+  const li = document.createElement('li');
+  li.id = 'container-quotes';
+  li.appendChild(document.createTextNode(quoteDetail.value));
+
+  quoteList.appendChild(li);
+
+  box.value = '';
+
+
+
+
+  event.preventDefault();
+});
+
+
+quoteWrite.addEventListener('submit', quoteWrite);

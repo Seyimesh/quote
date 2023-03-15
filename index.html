@@ -8,19 +8,21 @@
   <title>Quote</title>
 </head>
 <body>
-  <div class="container">
+  <div id="container">
     <div class="quote-header">
       <div class="quote-text"> What Quote is on your mind?</div>
       <div class="quote-field">
-        <div class="quote-input-field">
-          <input type="text" name="quote" placeholder="Enter your Quote" id="text">
-        </div> 
-        <input type="submit" value="Create Quote" class="create-quote">
+        <form id="quote">
+          <input type="text"  placeholder="Enter your Quote" id="text">
+
+          <button type="submit" id="save">Create a Quote</button>
+        </form>
       </div>
     </div>
   </div>
  
-  <div class=" container">
+  <div id=" container">
+  <a href="#" id="clear-quotes">Clear All</a>
   
   </div>
   <script src="app.js"></script>
