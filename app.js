@@ -1,38 +1,45 @@
 // Define UI vars
 
-const quoteWrite = document.getElementById("#quote");
-const quoteDetail = document.getElementById("#text");
-const clearQ = document.getElementById("#clear-quotes");
-const quoteList = document.getElementById("#container");
-
-quoteEventListeners();
-
-function quoteEventListeners() {
-  quoteWrite.addEventListener('submit', addTask);
-};
-
-
-
+const quoteWrite = document.getElementById('quote');
+const quoteDetail = document.getElementById('text');
+const clearQ = document.getElementById('clear-quotes');
+const quoteList = document.getElementById('container');
 
 
 quoteWrite.addEventListener('submit', function(event) {
-  // if(quoteDetail.value === ''){
-  //   alert('Kindly enter your quotes')
-  // };
+  if(quoteDetail.value === ''){
+    alert('Kindly enter your quotes');
+  };
+  //Add Element
+  const div = document.createElement('div');
+  div.id = 'collection-group';
+  div.appendChild(document.createTextNode(quoteDetail.value));
 
-  const li = document.createElement('li');
-  li.id = 'container-quotes';
-  li.appendChild(document.createTextNode(quoteDetail.value));
+  //Create a link 
+  const link = document.createElement('a');
 
-  quoteList.appendChild(li);
+  link.id = 'delete-item';
 
-  box.value = '';
+  //Add icon
+  link.innerHTML = '<ion-icon name="close-outline"></ion-icon>';
 
+  div.appendChild(link);
 
+  quoteList.appendChild(div);
 
+  quoteDetail.value = '';
 
+  console.log('clicked')
   event.preventDefault();
 });
 
 
-quoteWrite.addEventListener('submit', quoteWrite);
+quote.addEventListener('submit', quote);
+
+clearQ.addEventListener('click',  function(){
+  while(clearQ.firstChild){
+    clearQ.removeChild(clearQ.firstChild);
+  }
+})
+
+quote.addEventListener('click', clearQ);
