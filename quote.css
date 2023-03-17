@@ -7,6 +7,8 @@ body{
 
 #container {
   text-align: center;
+  width: auto;
+  margin-top: 56px;
 }
 
 .quote-header{
@@ -20,7 +22,7 @@ body{
   padding: 12px 32px 8px 14px;
   font-weight: bold;
   font-size: large;
-  width: 100%;
+  width: auto;
   margin-bottom: 16px;
 }
 
@@ -54,14 +56,19 @@ body{
 }
 
 #collection-group {
-  margin: 8px 12px 8px;
+  margin: 18px 12px 18px;
   border: 1px solid grey;
+  line-height: 1.25;
+  padding: 12px 08px 12px 8px;
+  width: 300px;
+  height: auto;
   border-radius: 4px;
+  text-align: center;
 }
-
-/* #collection{
-  display: grid;
-  grid-template-columns: 20px 250px;
+/*
+#collection{
+  display: flex;
+  justify-content: center;
 } */
 
 #clear-quotes{
