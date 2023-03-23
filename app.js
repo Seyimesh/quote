@@ -2,8 +2,9 @@
 
 const quoteWrite = document.getElementById('quote');
 const quoteDetail = document.getElementById('text');
-const clearQ = document.getElementById('clear-quotes');
+const clearQ = document.getElementsByClassName('clear-tasks');
 const quoteList = document.getElementById('container');
+const quoteGr = document.getElementById('collection');
 
 
 quoteWrite.addEventListener('submit', function(event) {
@@ -15,17 +16,7 @@ quoteWrite.addEventListener('submit', function(event) {
   div.id = 'collection-group';
   div.appendChild(document.createTextNode(quoteDetail.value));
 
-  //Create a link 
-  const link = document.createElement('a');
-
-  link.id = 'delete-item';
-
-  //Add icon
-  link.innerHTML = '<ion-icon name="close-outline"></ion-icon>';
-
-  div.appendChild(link);
-
-  quoteList.appendChild(div);
+  quoteGr.appendChild(div);
 
   quoteDetail.value = '';
 
@@ -34,12 +25,18 @@ quoteWrite.addEventListener('submit', function(event) {
 });
 
 
-quote.addEventListener('submit', quote);
-
-clearQ.addEventListener('click',  function(){
-  while(clearQ.firstChild){
-    clearQ.removeChild(clearQ.firstChild);
+clearQ.addEventListener('click', function () {
+  while(quoteGr.firstChild) {
+    quoteGr.removeChild(quoteGr.firstChild);
   }
-})
+});
 
-quote.addEventListener('click', clearQ);
+// quote.addEventListener('submit', quote);
+
+// clearQ.addEventListener('click',  function(){
+//   while(clearQ.firstChild){
+//     clearQ.removeChild(clearQ.firstChild);
+//   }
+// })
+
+// quote.addEventListener('click', clearQ);
