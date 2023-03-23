@@ -2,7 +2,7 @@
 
 const quoteWrite = document.getElementById('quote');
 const quoteDetail = document.getElementById('text');
-const clearQ = document.getElementsByClassName('clear-tasks');
+const clearQ = document.getElementById('clear-tasks');
 const quoteList = document.getElementById('container');
 const quoteGr = document.getElementById('collection');
 
@@ -30,13 +30,3 @@ clearQ.addEventListener('click', function () {
     quoteGr.removeChild(quoteGr.firstChild);
   }
 });
-
-// quote.addEventListener('submit', quote);
-
-// clearQ.addEventListener('click',  function(){
-//   while(clearQ.firstChild){
-//     clearQ.removeChild(clearQ.firstChild);
-//   }
-// })
-
-// quote.addEventListener('click', clearQ);
